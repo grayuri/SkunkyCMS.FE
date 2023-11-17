@@ -1,0 +1,24 @@
+@import '../../variables.scss';
+
+.page-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: $black;
+
+  img {
+    height: 50vh;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-size: $fs-45;
+  }
+
+  p {
+    color: $gray-text;
+    font-size: $fs-24;
+  }
+}

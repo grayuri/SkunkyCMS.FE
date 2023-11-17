@@ -1,0 +1,45 @@
+@import '../../variables.scss';
+
+.listed-banner {
+  padding: 12px;
+  border: 2px solid $purple;
+  border-radius: 8px;
+  @include umbra12DP();
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+
+    h1 {
+      font-size: $fs-32;
+      text-transform: capitalize;
+      color: $purple;
+    }
+
+    .update-button {
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      position: relative;
+      @include lightHover();
+      @include lightGreenGradient();
+    }
+  }
+
+  .image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  } 
+}

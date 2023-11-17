@@ -1,0 +1,98 @@
+@import '../../variables.scss';
+
+.listed-product {
+  color: white;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  .title { width: 30%; }
+  .price { width: 10%; }
+  .category { width: 15%; }
+  .subcategory { width: 15%; }
+  .type { width: 15%; }
+  .operations { width: 15%; }
+
+  .title {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  .operations {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  .title, .price, .category,
+  .subcategory, .type, .operations {
+    color: $black;
+    border-right: 1px solid $gray;
+    padding: 8px 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    text-transform: capitalize;
+  }
+
+  .title {
+    max-width: 380px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .price {
+    text-align: center;
+  }
+
+  .operations, .type, .subcategory, .category {
+    text-align: center;
+  }
+
+  .operations {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    border-right: none;
+
+    .editProduct-operation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid $light-green;
+      border-radius: 4px;
+      width: 32px;
+      height: 32px;
+
+      color: $light-green;
+      transition: 0.24s $bezier;
+
+      &:hover {
+        color: white;
+        @include lightGreenGradient();
+      }
+    }
+
+    .removeProduct-operation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid $red;
+      border-radius: 4px;
+      width: 32px;
+      height: 32px;
+
+      color: $red;
+      transition: 0.24s $bezier;
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+        @include redGradient();
+      }
+    }
+  }
+}

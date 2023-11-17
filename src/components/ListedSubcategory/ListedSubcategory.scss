@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+.listed-subcategory {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+  @include umbra12DP();
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $fs-22;
+    color: white;
+    @include blackGradient();
+    padding: 12px 16px;
+    text-transform: capitalize;
+    @include umbra12DP();
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    
+    button {
+      padding: 4px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      @include lightHover();
+    }
+
+    .update-button {
+      color: white;  
+      @include lightGreenGradient;
+    }
+
+    .delete-button {
+      color: white;
+      @include redGradient;
+    }
+  }
+}

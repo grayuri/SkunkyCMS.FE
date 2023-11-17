@@ -1,0 +1,73 @@
+@import '../../variables.scss';
+
+.listed-type {
+  border: 2px solid $black;
+  border-radius: 12px;
+  overflow: hidden;
+  @include umbra12DP();
+
+  &-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px;
+    @include blackGradient();
+    @include penumbra12DP();
+
+    h1 {
+      color: white;
+      font-size: $fs-32;
+      text-transform: capitalize;
+      padding: 0;
+    }
+
+    .buttons {
+      width: fit-content;
+      display: flex;
+      gap: 8px;
+      
+      button {
+        padding: 4px;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        @include lightHover();
+        @include umbra16DP();
+      }
+  
+      .update-button {
+        color: white;  
+        @include lightGreenGradient;
+      }
+  
+      .delete-button {
+        color: white;
+        @include redGradient;
+      }
+    }
+  }
+
+  .products-list {
+    padding: 12px;
+    overflow: hidden;
+
+    li {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+
+      text-overflow: ellipsis;
+      line-clamp: 1; 
+      font-size: $fs-22;
+      color: $gray-text;
+      overflow: hidden;
+
+      margin-bottom: 4px;
+      font-weight: normal;
+      cursor: default;
+    }
+  }
+}

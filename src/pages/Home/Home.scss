@@ -1,0 +1,214 @@
+@import '../../variables.scss';
+
+.home {  
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  padding: $p-pages;
+  
+  .top {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 32px;
+    color: $black;
+
+    h1 {
+      font-size: $fs-36;
+      padding-bottom: 8px;
+    }
+  }
+
+  .middle {
+    display: flex;
+    gap: 64px;
+    align-items: center;
+    
+    width: 100%;
+    margin-bottom: 32px;
+
+    .input-search {
+      display: flex;
+      align-items: center;
+      width: 45%;
+      height: 64px;
+      
+      input {
+        width: 100%;
+        height: 100%;
+        padding: 0 12px;
+        font-size: $fs-22;
+        border: 2px solid $black;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        font-weight: normal;
+        color: $black;
+
+        &::placeholder {
+          color: $black;
+          opacity: 0.6;
+        }
+      }
+
+      .send-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 82px;
+        cursor: pointer;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border: none;
+        color: white;
+        @include blackGradient();
+
+        position: relative;
+        @include lightHover();
+      }
+    }
+
+    .filter {
+      position: relative;
+
+      .filter-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        
+        position: relative;
+        background: transparent;
+        padding: 8px 16px;
+        padding-left: 10px;
+        width: fit-content;
+        height: 64px;
+        border: 2px solid $black;
+        border-radius: 8px;
+        cursor: pointer;
+        color: $black;
+        font-size: $fs-22;
+        font-weight: normal;
+        transition: 0.24s $bezier;
+  
+        &:hover {
+          background: rgba(0, 0, 0, 0.06);
+          @include penumbra16DP();
+        }
+      }
+
+      .filters-div {
+        position: absolute;        
+        top: 112%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        padding: 12px;
+        width: fit-content;
+        font-size: $fs-16;
+        border-radius: 8px;
+        border: 1px solid $black;
+        background-color: white;
+        cursor: default;
+        @include umbra16DP();
+
+        label {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          span {
+            color: $black;
+            font-weight: bold;
+          }
+
+          select {
+            padding: 4px;
+            border-radius: 8px;
+            color: $black;
+            border: 1px solid $black;
+            text-transform: capitalize;
+            
+            option {
+              padding: 4px;
+              text-transform: capitalize;
+            }
+          }
+        }
+
+        .reset-filters-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          color: white;
+          border: none;
+          padding: 4px;
+          border-radius: 8px;
+          cursor: pointer;
+          @include blackGradient();
+          @include umbra16DP();
+
+          position: relative;
+          @include lightHover();
+        }
+      }
+    }
+
+    .addProduct-button {
+      @include mainButtonsStyle();
+    }
+  }
+
+  .bottom {
+    width: 100%;
+    
+    .products-list {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 32px;
+
+      .header-list {
+        color: white;
+        border-radius: 4px;
+        font-size: $fs-16;
+        @include blackGradient();
+
+        .title { width: 30%; }
+        .price { width: 10%; }
+        .category { width: 15%; }
+        .subcategory { width: 15%; }
+        .type { width: 15%; }
+        .operations { width: 15%; }
+
+        .title {
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+        }
+      
+        .operations {
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+        }
+
+        .title, .price, .category,
+        .subcategory, .type, .operations {
+          border-right: 1px solid white;
+          padding: 8px 12px;
+          font-weight: normal;
+        }
+
+        .operations, .type {
+          text-align: center;
+        }
+      }
+    }
+
+    .pagination-section {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

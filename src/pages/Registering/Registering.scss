@@ -1,0 +1,214 @@
+@import '../../variables.scss';
+
+.registering-page {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  padding: $p-pages;
+  font-size: $fs-22;
+  color: $black;
+
+  input, textarea, select {
+    border: 2px solid $purple;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: $fs-22;
+    font-weight: lighter;
+  }
+
+  select {
+    text-transform: capitalize;
+
+    option {
+      text-transform: capitalize;
+    }
+  }
+
+  .fields {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+
+    .image-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 30%;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .images-previewer {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .images-selecteds {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+  
+          .image-selected {
+            display: grid;
+            place-items: center;
+            height: 56px;
+            width: 56px;
+            aspect-ratio: 1;
+            border: 2px solid $purple;
+            border-radius: 8px;
+            color: purple;
+            overflow: hidden;
+            cursor: pointer;
+
+            &.selected {
+              border: 2px solid $pink;
+              @include ambient12DP();
+            }
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+
+        .previewer {
+          .image {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            color: $gray;
+
+            p {
+              text-align: center;
+              color: $purple;
+            }
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+
+    .product-fields {
+      display: flex;
+      gap: 24px;
+      flex-direction: column;
+      width: 70%;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      } 
+
+      .description {
+        height: 480px;
+
+        .top {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          .description-previewer-icon {
+            color: $black;
+            transition: 0.24s $bezier;
+
+            &:hover {
+              color: $pink;
+            }
+          }
+        }
+        
+        .quill {
+          height: calc(100% - 70px);
+
+          .ql-toolbar {
+            border: 2px solid $purple;
+            border-bottom: none;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            @include penumbra9DP();
+          }
+
+          .ql-container {
+            border: 2px solid $purple;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            font-size: $fs-16;
+          }
+        }
+      }
+
+      .prices {
+        display: flex;
+        gap: 24px;
+
+        .current-price {
+          width: 50%;
+        }
+
+        .old-price {
+          width: 50%;
+        }
+      }
+
+      .categoric-row {
+        display: flex;
+        gap: 24px;
+
+        .category {
+          width: 50%;
+        }
+
+        .subcategory {
+          width: 50%;
+        }
+      }
+
+      .type {
+        width: calc(50% - 12px);
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+    margin-top: 48px;
+    width: 100%;
+
+    .cancel-button {
+      cursor: pointer;
+      transition: 0.24s $bezier;
+
+      border-radius: 8px;
+      border: 2px solid $gray-text;
+      padding: 16px;
+      background: transparent;
+
+      font-size: $fs-22;
+      color: $gray-text;
+      text-decoration: none;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.08)
+      }
+    }
+
+    .addProduct-button {
+      @include mainButtonsStyle();
+    }
+  }
+}
